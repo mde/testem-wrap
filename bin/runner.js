@@ -131,4 +131,8 @@ function act(fun){
   }
 }
 
+process.on('SIGINT', function () {
+  bridge.sendCmd({command: 'done'});
+  bridge.stop();
+});
 
